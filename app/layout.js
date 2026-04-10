@@ -16,7 +16,7 @@ export const metadata = {
   title: "Portfolio",
   description: "-Ayush Sahu",
   icons: {
-    icon: "/logo.webp",
+    icon: "/logo.png",
   },
 };
 
