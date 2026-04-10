@@ -8,8 +8,8 @@ import {
 const Contact = () => {
   const contactIcons = [
     { icon: FaEnvelope, href: "mailto:ayush@example.com", label: "Email", type: "icon" },
-    { icon: "/images/github.png", href: "#", label: "GitHub", type: "image" },
-    { icon: "/images/linkdein.png", href: "#", label: "LinkedIn", type: "image" },
+    { icon: "/images/github.png", href: "https://github.com/Charlie8989", label: "GitHub", type: "image" },
+    { icon: "/images/linkdein.png", href: "https://www.linkedin.com/in/ayush-sahu-83r/", label: "LinkedIn", type: "image" },
     // { icon: FaInstagram, href: "#", label: "Instagram", type: "icon" },
   ];
 
