@@ -119,7 +119,7 @@ const Skiper31 = () => {
     "deploys on Fridays.",
     "console.logs everything.",
     "coffee into commits.",
-    "writes elegant bugs.",
+    "writes elegant bugs",
   ];
 
   useEffect(() => {
