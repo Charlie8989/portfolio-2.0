@@ -194,7 +194,7 @@ const CardNav = ({
             <div
               key={`${item.label}-${idx}`}
               ref={setCardRef(idx)}
-              className="flex flex-col gap-2 p-4 rounded-xl min-h-[60px] md:h-full flex-1"
+              className="flex flex-col gap-2 p-4 rounded-xl  flex-1"
               style={{
                 backgroundColor: item.bgColor,
                 color: item.textColor,

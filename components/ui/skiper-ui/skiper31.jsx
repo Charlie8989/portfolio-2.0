@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ReactLenis from "lenis/react";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Skiper28 } from "./skiper28";
-import { Skiper51 } from "./skiper51";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
 
 const CharacterV1 = ({ char, index, centerIndex, scrollYProgress }) => {
   const isSpace = char === " ";
@@ -56,7 +56,10 @@ const CharacterV2 = ({ char, index, centerIndex, scrollYProgress }) => {
   return (
     <motion.img
       src={char}
-      className={cn("inline-block w-8 h-8 sm:w-10 sm:h-10 rounded-sm mx-1", isSpace && "w-4")}
+      className={cn(
+        "inline-block w-8 h-8 sm:w-10 sm:h-10 rounded-sm mx-1",
+        isSpace && "w-4",
+      )}
       style={{
         x,
         scale,
@@ -70,11 +73,7 @@ const CharacterV3 = ({ char, index, centerIndex, scrollYProgress }) => {
   const isSpace = char === " ";
   const distanceFromCenter = index - centerIndex;
 
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [distanceFromCenter * 90, 0],
-  );
+  const x = useTransform(scrollYProgress, [0, 1], [distanceFromCenter * 90, 0]);
   const rotate = useTransform(
     scrollYProgress,
     [0, 1],
@@ -91,7 +90,10 @@ const CharacterV3 = ({ char, index, centerIndex, scrollYProgress }) => {
   return (
     <motion.img
       src={char}
-      className={cn("inline-block w-8 h-8 sm:w-10 sm:h-10 rounded-sm mx-1", isSpace && "w-4")}
+      className={cn(
+        "inline-block w-8 h-8 sm:w-10 sm:h-10 rounded-sm mx-1",
+        isSpace && "w-4",
+      )}
       style={{
         x,
         rotate,
@@ -147,13 +149,13 @@ const Skiper31 = () => {
     "/images/mongodb.png",
     "/images/figma.png",
     "/images/nodejs.png",
-    "/images/vercel.png"
+    "/images/vercel.png",
   ];
   const iconCenterIndex = Math.floor(macIcon.length / 2);
 
   return (
     <ReactLenis root>
-      <main className="w-full bg-transparent">
+      <main className="w-full h-full bg-transparent">
         <div
           ref={targetRef}
           className="relative box-border flex h-[210vh] items-center justify-center flex-col gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
@@ -201,7 +203,7 @@ const Skiper31 = () => {
           <div>
             <Projects />
           </div>
-          <p className="font-geist flex items-center justify-center gap-3 mt-[10vh] text-2xl font-medium tracking-tight text-black">
+          <p className="font-geist flex items-center justify-center gap-3 mt-[12vh] text-2xl font-medium tracking-tight text-black">
             <span className="font-geist font-medium">Powered By</span>
           </p>
 
@@ -217,35 +219,34 @@ const Skiper31 = () => {
             ))}
           </div>
         </div>
+
         <div
           ref={targetRef3}
-          className="relative -mt-[95vh] box-border flex h-[210vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
+          className="relative -mt-[100vh] box-border flex sm:h-[160vh] h-[185vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
         >
-          {" "}
-          <p className="font-geist flex items-center justify-center gap-3 text-2xl font-medium tracking-tight text-black">
-            <Bracket className="h-12 text-black" />
-            <span className="font-geist font-medium">
-              intergrate with your fav tech stack
-            </span>
-            <Bracket className="h-12 scale-x-[-1] text-black" />
+          <div>
+            <Skills />
+          </div>
+          
+
+          {/* <p className="font-geist flex items-center justify-center gap-3 mt-[70vh] sm:mt-[12vh] text-2xl font-medium tracking-tight text-black">
+            <span className="font-geist font-medium">Powered By</span>
           </p>
-          <div
-            className="font-geist w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black"
-            style={{
-              perspective: "500px",
-            }}
-          >
+
+          <div className="font-geist w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black">
             {macIcon.map((char, index) => (
               <CharacterV3
                 key={index}
                 char={char}
                 index={index}
                 centerIndex={iconCenterIndex}
-                scrollYProgress={scrollYProgress3}
+                scrollYProgress={scrollYProgress2}
               />
             ))}
-          </div>
+          </div> */}
         </div>
+
+        <Contact />
       </main>
     </ReactLenis>
   );

@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Portfolio",
   description: "-Ayush Sahu",
+  icons: {
+    icon: "/logo.webp",
+  },
 };
 
 export default function RootLayout({ children }) {
