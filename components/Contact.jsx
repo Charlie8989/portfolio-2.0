@@ -1,23 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaEnvelope,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaEnvelope, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   const contactIcons = [
-    { icon: FaEnvelope, href: "mailto:ayush@example.com", label: "Email", type: "icon" },
-    { icon: "/images/github.png", href: "https://github.com/Charlie8989", label: "GitHub", type: "image" },
-    { icon: "/images/linkdein.png", href: "https://www.linkedin.com/in/ayush-sahu-83r/", label: "LinkedIn", type: "image" },
-    // { icon: FaInstagram, href: "#", label: "Instagram", type: "icon" },
+    {
+      icon: "/images/gmail.png",
+      href: "mailto:ayush@example.com",
+      label: "Email",
+      type: "image",
+    },
+    {
+      icon: "/images/github.png",
+      href: "https://github.com/Charlie8989",
+      label: "GitHub",
+      type: "image",
+    },
+    {
+      icon: "/images/linkdein.png",
+      href: "https://www.linkedin.com/in/ayush-sahu-83r/",
+      label: "LinkedIn",
+      type: "image",
+    },
   ];
 
   return (
     <div className="w-full bg-transparent border-t border border-black/10 py-20 px-4">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,13 +63,13 @@ const Contact = () => {
                 className="inline-block"
               >
                 {contact.type === "image" ? (
-                  <img 
-                    src={contact.icon} 
+                  <img
+                    src={contact.icon}
                     alt={contact.label}
                     className="w-10 h-10 object-contain transition-transform duration-300 hover:scale-110"
                   />
                 ) : (
-                  <div 
+                  <div
                     className="text-4xl transition-colors duration-300 hover:scale-110"
                     style={{ color: "#FF6900" }}
                   >
@@ -79,7 +90,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="mailto:ayush@example.com"
+            href="/resume.pdf"
             className="text-black font-semibold py-3 px-8 rounded-lg text-base border-2 transition-all duration-300 hover:scale-105"
             style={{ borderColor: "#FF6900", color: "#FF6900" }}
             whileHover={{
