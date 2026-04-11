@@ -32,6 +32,10 @@ const Skills = () => {
       ...prev,
       [idx]: !prev[idx]
     }))
+    // Smooth scroll to ensure content is visible
+    setTimeout(() => {
+      window.scrollBy({ top: 50, behavior: 'smooth' })
+    }, 100)
   }
 
   const getVisibleSkills = (skills, categoryIdx) => {
@@ -50,7 +54,7 @@ const Skills = () => {
         delayChildren: 0.3,
       }
     },
-    exit: { opacity: 0, y: 20 }
+    // exit: { opacity: 0, y: 20 }
   }
 
   const categoryVariants = {
@@ -63,14 +67,14 @@ const Skills = () => {
         ease: 'easeOut'
       }
     },
-    exit: {
-      opacity: 0,
-      y: 20,
-      transition: {
-        duration: 2,
-        ease: 'easeIn'
-      }
-    }
+    // exit: {
+    //   opacity: 0,
+    //   y: 20,
+    //   transition: {
+    //     duration: 2,
+    //     ease: 'easeIn'
+    //   }
+    // }
   }
 
   const skillVariants = {
@@ -83,14 +87,14 @@ const Skills = () => {
         ease: 'easeOut'
       }
     },
-    exit: {
-      opacity: 0,
-      scale: 0.8,
-      transition: {
-        duration: 1.5,
-        ease: 'easeIn'
-      }
-    },
+    // exit: {
+    //   opacity: 0,
+    //   scale: 0.8,
+    //   transition: {
+    //     duration: 1.5,
+    //     ease: 'easeIn'
+    //   }
+    // },
     hover: {
       scale: 1.02,
       y: -5,
@@ -149,36 +153,35 @@ const Skills = () => {
   ]
 
   return (
-     <div className="mx-4 sm:mt-0 mt-[50vh] sm:mx-20 lg:mx-40 h-[70vh] w-[90vw]">
+     <div className="mx-4 sm:mt-0 mt-[50vh] sm:mx-20 lg:mx-40 w-[90vw]">
       <div className="flex flex-col gap-2">
         <div className="font-light text-zinc-400 text-lg sm:text-xl">
           03. Skills
         </div>
 
-        <div className="w-full max-h-full border border-gray-200 p-10 rounded-sm bg-transparent">
-          <AnimatePresence mode="wait">
+        <div className="w-full border border-gray-200 p-10 rounded-sm bg-transparent">
+          {/* <AnimatePresence mode="wait"> */}
             <motion.div 
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              exit="exit"
-              viewport={{ amount: 0.4 }}
+            viewport={{ once: true, amount: 0.3 }}
             >
               {skillsCategories.map((category, idx) => (
               <motion.div 
                 key={idx} 
                 className="flex flex-col gap-6"
                 variants={categoryVariants}
-                exit="exit"
+                // exit="exit"
               >
                 <motion.h3 
                   className="text-lg font-semibold text-gray-800 pb-4 border-b-2 border-orange-500"
                   initial={{ width: '0%', opacity: 0 }}
                   whileInView={{ width: '100%', opacity: 1 }}
-                  exit={{ width: '0%', opacity: 0 }}
+                  // exit={{ width: '0%', opacity: 0 }}
                   transition={{ duration: 2.5, ease: 'easeOut' }}
-                  viewport={{ amount: 0.4 }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   {category.title}
                 </motion.h3>
@@ -192,7 +195,7 @@ const Skills = () => {
                         className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-100 hover:border-orange-400 hover:shadow-lg transition-all duration-300 cursor-pointer group bg-gray-50 hover:bg-orange-50"
                         variants={skillVariants}
                         whileHover="hover"
-                        exit="exit"
+                        // exit="exit"
                       >
                         <motion.div
                           variants={iconVariants}
@@ -228,7 +231,7 @@ const Skills = () => {
               </motion.div>
             ))}
           </motion.div>
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
         </div>
       </div>
     </div>

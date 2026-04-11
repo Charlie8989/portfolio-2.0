@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Link from "next/link";
 
 const CharacterV1 = ({ char, index, centerIndex, scrollYProgress }) => {
   const isSpace = char === " ";
@@ -191,7 +192,7 @@ const Skiper31 = () => {
             ))}
           </div>
 
-          <div>
+          <div id="about">
             <About />
           </div>
         </div>
@@ -200,7 +201,7 @@ const Skiper31 = () => {
           ref={targetRef2}
           className="relative -mt-[100vh] box-border flex sm:h-[250vh] h-[220vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
         >
-          <div>
+          <div id="projects">
             <Projects />
           </div>
           <p className="font-geist flex items-center justify-center gap-3 mt-[12vh] text-2xl font-medium tracking-tight text-black">
@@ -227,7 +228,6 @@ const Skiper31 = () => {
           <div>
             <Skills />
           </div>
-          
 
           {/* <p className="font-geist flex items-center justify-center gap-3 mt-[70vh] sm:mt-[12vh] text-2xl font-medium tracking-tight text-black">
             <span className="font-geist font-medium">Powered By</span>
@@ -245,8 +245,9 @@ const Skiper31 = () => {
             ))}
           </div> */}
         </div>
-
-        <Contact />
+        <div id="contact">
+          <Contact />
+        </div>
       </main>
     </ReactLenis>
   );

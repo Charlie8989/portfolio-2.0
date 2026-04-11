@@ -80,7 +80,7 @@ const CardNav = ({
         ease,
         stagger: 0.08,
       },
-      "-=0.1"
+      "-=0.1",
     );
 
     return tl;
@@ -163,8 +163,8 @@ const CardNav = ({
 
           <div className="flex items-center">
             <Image
-              src='/logo.webp'
-              alt='logo'
+              src="/logo.webp"
+              alt="logo"
               width={70}
               height={28}
               priority
@@ -200,7 +200,13 @@ const CardNav = ({
                 color: item.textColor,
               }}
             >
-              <div className="text-lg md:text-xl">
+              <div
+                onClick={() => {
+                  const target = document.querySelector(item.href);
+                  target?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="cursor-pointer"
+              >
                 {item.label}
               </div>
 
