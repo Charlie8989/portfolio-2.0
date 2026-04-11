@@ -223,7 +223,7 @@ const Skiper31 = () => {
 
         <div
           ref={targetRef3}
-          className="relative -mt-[100vh] box-border flex sm:h-[160vh] h-[185vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
+          className="relative -mt-[100vh] box-border flex sm:h-[160vh] h-[250vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-transparent p-[2vw]"
         >
           <div>
             <Skills />

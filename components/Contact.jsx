@@ -24,7 +24,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="w-full bg-transparent border-t border border-black/10 mt-0 sm:-mt-[30vh] py-20 px-4">
+    <div className="w-full bg-transparent border-t border border-black/10 -mt-[20vh] sm:-mt-[30vh] py-20 px-4">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <motion.div

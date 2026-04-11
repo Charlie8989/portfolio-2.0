@@ -15,34 +15,7 @@ const ThreeJSIcon = ({ className }) => (
   </svg>
 )
 const Skills = () => {
-  const [expandedCategories, setExpandedCategories] = useState({})
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth < 768)
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const toggleCategory = (idx) => {
-    setExpandedCategories(prev => ({
-      ...prev,
-      [idx]: !prev[idx]
-    }))
-    // Smooth scroll to ensure content is visible
-    setTimeout(() => {
-      window.scrollBy({ top: 50, behavior: 'smooth' })
-    }, 100)
-  }
-
-  const getVisibleSkills = (skills, categoryIdx) => {
-    const isExpanded = expandedCategories[categoryIdx]
-    if (!isMobile) return skills
-    return isExpanded ? skills : skills.slice(0, 4)
-  }
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -153,7 +126,7 @@ const Skills = () => {
   ]
 
   return (
-     <div className="mx-4 sm:mt-0 mt-[50vh] sm:mx-20 lg:mx-40 w-[90vw]">
+     <div className="mx-4 sm:mt-0 mt-[17vh] sm:mx-20 lg:mx-40 w-[90vw]">
       <div className="flex flex-col gap-2">
         <div className="font-light text-zinc-400 text-lg sm:text-xl">
           03. Skills
@@ -186,7 +159,7 @@ const Skills = () => {
                   {category.title}
                 </motion.h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {getVisibleSkills(category.skills, idx).map((skill, skillIdx) => {
+                  {category.skills.map((skill, skillIdx) => {
                     const IconComponent = skill.icon || skill.customIcon
                     const isCustomIcon = skill.customIcon !== undefined
                     return (
@@ -218,16 +191,7 @@ const Skills = () => {
                     )
                   })}
                 </div>
-                {isMobile && category.skills.length > 4 && (
-                  <motion.button
-                    onClick={() => toggleCategory(idx)}
-                    className="mt-4 w-full py-2 px-4 bg-transparent hover:bg-orange-200 border border-orange-500 text-black hover:text-white text-sm font-medium rounded-md transition-colors duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {expandedCategories[idx] ? 'Show Less' : 'Load More'}
-                  </motion.button>
-                )}
+
               </motion.div>
             ))}
           </motion.div>
