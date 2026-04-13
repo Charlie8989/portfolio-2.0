@@ -161,7 +161,7 @@ const CardNav = ({
             />
           </div>
 
-          <div className="flex items-center">
+          <a href="/" className="flex items-center">
             <Image
               src="/logo.webp"
               alt="logo"
@@ -169,18 +169,18 @@ const CardNav = ({
               height={28}
               priority
             />
-          </div>
+          </a>
 
-          <button
-            type="button"
+          <a
+            href="/resume.pdf"
             className="hidden md:inline-flex rounded-xl px-4 items-center h-full font-medium transition-colors duration-300"
             style={{
               backgroundColor: buttonBgColor,
               color: buttonTextColor,
             }}
           >
-            Get Started
-          </button>
+            Get Resume
+          </a>
         </div>
 
         <div
