@@ -9,11 +9,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "iPhone-clone",
-    image: "/projects/iphone.png",
-    cardImage: "/projects/stackimage/iphone-card.png",
-    desc: "A visually accurate iPhone website clone focused on smooth animations and responsive design, replicating the premium look and feel of Apple’s product pages.",
-    link: "https://iphone.ayush-codes.tech",
+    title: "Nextflow",
+    image: "/projects/nextflow.png",
+    cardImage: "/projects/stackimage/nextflow-card.jpeg",
+    desc: "A Clone website of Krea AI nodes feature using LLM models and more other functions",
+    link: "https://nextflow.ayush-codes.tech",
   },
   {
     id: 3,
@@ -31,6 +31,14 @@ const projects = [
     desc: "A real-time typing practice platform that tracks speed, accuracy, and consistency while providing instant feedback to help users improve their typing skills.",
     link: "https://typewithaakash.ayush-codes.tech",
   },
+  {
+    id: 5,
+    title: "iPhone Website CLone",
+    image: "/projects/iphone.png",
+    cardImage: "/projects/stackimage/iphone-card.png",
+    desc: "A Clone website of iPhone 15 Pro",
+    link: "https://iPhone.ayush-codes.tech",
+  }
 ];
 
 export default projects;
