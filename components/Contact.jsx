@@ -90,6 +90,7 @@ const Contact = () => {
         >
           <motion.a
             href="/resume.pdf"
+            target="_blank"
             className="text-black font-semibold py-3 px-8 rounded-lg text-base border-2 transition-all duration-300 hover:scale-105"
             style={{ borderColor: "#FF6900", color: "#FF6900" }}
             whileHover={{

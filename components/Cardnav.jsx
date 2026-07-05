@@ -173,6 +173,7 @@ const CardNav = ({
 
           <a
             href="/resume.pdf"
+            target="_blank"
             className="hidden md:inline-flex rounded-xl px-4 items-center h-full font-medium transition-colors duration-300"
             style={{
               backgroundColor: buttonBgColor,
