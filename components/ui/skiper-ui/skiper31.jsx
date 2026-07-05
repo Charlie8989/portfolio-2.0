@@ -143,14 +143,14 @@ const Skiper31 = () => {
   const centerIndex = Math.floor(characters.length / 2);
 
   const macIcon = [
-    "/images/React.png",
-    "/images/Nextjs.png",
-    "/images/tailwind.png",
-    "/images/github.png",
-    "/images/mongodb.png",
-    "/images/figma.png",
-    "/images/nodejs.png",
-    "/images/vercel.png",
+    "/images/React.webp",
+    "/images/Nextjs.webp",
+    "/images/tailwind.webp",
+    "/images/github.webp",
+    "/images/mongodb.webp",
+    "/images/figma.webp",
+    "/images/nodejs.webp",
+    "/images/vercel.webp",
   ];
   const iconCenterIndex = Math.floor(macIcon.length / 2);
 

@@ -1,22 +1,23 @@
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   const contactIcons = [
     {
-      icon: "/images/gmail.png",
+      icon: "/images/gmail.webp",
       href: "mailto:ayush@example.com",
       label: "Email",
       type: "image",
     },
     {
-      icon: "/images/github.png",
+      icon: "/images/github.webp",
       href: "https://github.com/Charlie8989",
       label: "GitHub",
       type: "image",
     },
     {
-      icon: "/images/linkdein.png",
+      icon: "/images/linkdein.webp",
       href: "https://www.linkedin.com/in/ayush-sahu-83r/",
       label: "LinkedIn",
       type: "image",
@@ -62,9 +63,11 @@ const Contact = () => {
                 className="inline-block"
               >
                 {contact.type === "image" ? (
-                  <img
+                  <Image
                     src={contact.icon}
                     alt={contact.label}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 object-contain transition-transform duration-300 hover:scale-110"
                   />
                 ) : (

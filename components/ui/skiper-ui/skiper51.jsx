@@ -10,28 +10,29 @@ import "swiper/css/effect-creative";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const Skiper51 = () => {
   const images = [
     {
-      src: "/projects/boloboss.png",
+      src: "/projects/boloboss.webp",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/projects/iphone.png",
+      src: "/projects/iphone.webp",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/projects/mern.png",
+      src: "/projects/mern.webp",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/projects/trendora.png",
+      src: "/projects/trendora.webp",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/projects/typewithaakash.png",
+      src: "/projects/typewithaakash.webp",
       alt: "Illustrations by my fav AarzooAly",
     },
   ];
@@ -131,10 +132,13 @@ const Carousel_005 = ({
           modules={[EffectCreative, Pagination, Autoplay]}>
           {images.map((image, index) => (
             <SwiperSlide key={index} className="">
-              <img
+              <Image
                 className="h-full w-full scale-105 rounded-3xl object-cover object-top"
                 src={image.src}
-                alt={image.alt} />
+                alt={image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </SwiperSlide>
           ))}
           {showNavigation && (
