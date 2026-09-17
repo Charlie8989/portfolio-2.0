@@ -11,7 +11,7 @@ const About = () => {
       <div className="bg-[#111]/10 w-full rounded-lg flex flex-col sm:flex-row sm:items-center mt-5">
         <div className="p-4 sm:p-5 flex justify-center sm:shrink-0">
           <Image
-            src="/ayush side photo.webp"
+            src="/profile_photo.webp"
             alt="Ayush Sahu portrait"
             width={340}
             height={340}
